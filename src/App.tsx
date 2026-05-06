@@ -12,6 +12,7 @@ import Dashboard from "./pages/Dashboard";
 import Activos from "./pages/Activos";
 import NuevoActivo from "./pages/NuevoActivo";
 import ActivoDetalle from "./pages/ActivoDetalle";
+import EditarActivo from "./pages/EditarActivo";
 import Movimientos from "./pages/Movimientos";
 import Alertas from "./pages/Alertas";
 import Reportes from "./pages/Reportes";
@@ -38,6 +39,7 @@ const App = () => (
               <Route path="/activos" element={<Activos />} />
               <Route path="/activos/nuevo" element={<NuevoActivo />} />
               <Route path="/activos/:id" element={<ActivoDetalle />} />
+              <Route path="/activos/:id/editar" element={<EditarActivo />} />
               <Route path="/movimientos" element={<Movimientos />} />
               <Route path="/alertas" element={<Alertas />} />
               <Route path="/reportes" element={<Reportes />} />
