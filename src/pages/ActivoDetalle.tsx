@@ -3,7 +3,8 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ArrowLeft, Edit, Trash2, Printer, QrCode } from "lucide-react";
+import { ArrowLeft, Edit, Trash2, Printer } from "lucide-react";
+import AccionesActivo from "@/components/AccionesActivo";
 import { ICON_MAP, estadoColor, garantiaColor, formatPYG } from "@/lib/activos";
 import { format } from "date-fns";
 import { QRCodeCanvas } from "qrcode.react";
@@ -60,9 +61,13 @@ export default function ActivoDetalle() {
             </div>
           </div>
           <div className="flex flex-wrap gap-2">
+            <Button asChild variant="outline" size="sm"><Link to={`/activos/${a.id}/editar`}><Edit className="h-4 w-4 mr-1" />Editar</Link></Button>
             <Button variant="outline" size="sm" onClick={() => window.print()}><Printer className="h-4 w-4 mr-1" />Imprimir</Button>
             {isAdmin && <Button variant="outline" size="sm" onClick={eliminar}><Trash2 className="h-4 w-4 mr-1" />Eliminar</Button>}
           </div>
+        </div>
+        <div className="mt-5 pt-4 border-t">
+          <AccionesActivo activo={a} onChange={load} />
         </div>
       </div>
 
