@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function AppHeader() {
   const { user, roles, signOut } = useAuth();
@@ -73,6 +74,7 @@ export default function AppHeader() {
           </div>
         )}
       </div>
+      <ThemeToggle />
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" size="sm" className="gap-2">
