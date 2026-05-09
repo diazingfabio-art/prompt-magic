@@ -22,6 +22,7 @@ import Organizaciones from "./pages/Organizaciones";
 import Usuarios from "./pages/Usuarios";
 import Auditoria from "./pages/Auditoria";
 import Configuracion from "./pages/Configuracion";
+import Perfil from "./pages/Perfil";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -50,6 +51,7 @@ const App = () => (
               <Route path="/usuarios" element={<Usuarios />} />
               <Route path="/auditoria" element={<Auditoria />} />
               <Route path="/configuracion" element={<Configuracion />} />
+              <Route path="/perfil" element={<Perfil />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
